@@ -26,18 +26,32 @@ class MainActivity : AppCompatActivity(), DemoFragment.OnFragmentInteractionList
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
-            R.id.search -> {
-                Toast.makeText(this, "search", Toast.LENGTH_SHORT).show()
-                true
+//        return when (item?.itemId) {
+//            R.id.search -> {
+//                Toast.makeText(this, "search", Toast.LENGTH_SHORT).show()
+//                true
+//
+//            }
+//            R.id.settings -> {
+//                Toast.makeText(this, "setteing", Toast.LENGTH_SHORT).show()
+//                return true
+//            }
+//
+//            else -> super.onOptionsItemSelected(item)
+//        }
 
+        val itemId = item?.itemId
+        when {
+            itemId == R.id.search -> {
+                Toast.makeText(this, "tsih", Toast.LENGTH_SHORT).show()
+                return true
             }
-            R.id.settings -> {
-                Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show()
-                true
+            itemId == R.id.settings -> {
+                Toast.makeText(this, "esatohu", Toast.LENGTH_SHORT).show()
+                return false
             }
-            else -> super.onOptionsItemSelected(item)
         }
+        return true
     }
 
     fun buttonClicked(v: View) {

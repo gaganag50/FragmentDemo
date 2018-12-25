@@ -5,8 +5,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 
 class DemoFragment : Fragment() {
@@ -17,7 +19,18 @@ class DemoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.settings-> {
+                Toast.makeText(context, "settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateView(
